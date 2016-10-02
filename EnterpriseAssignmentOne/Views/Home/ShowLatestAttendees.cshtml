@@ -1,0 +1,28 @@
+﻿@using EnterpriseAssignmentOne.Models
+@model List<CompetitionInvite>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowLatestAttendees</title>
+</head>
+<body>
+    <div> 
+        @foreach (CompetitionInvite response in @Model)
+        {
+            <h1>
+                <p>response.Name</p>
+                <p>response.Email</p>
+                <p>response.Phone</p>
+                <p>response.WillAttend</p>
+            </h1>
+        }
+    </div>
+</body>
+</html>
