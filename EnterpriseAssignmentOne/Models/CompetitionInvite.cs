@@ -30,7 +30,6 @@ namespace EnterpriseAssignmentOne.Models
         [Required(ErrorMessage = "Please enter your phone number")]
         public string Phone { get; set; }
 
-        [Required(ErrorMessage = "Please specify whether you'll attend")]
         public bool? WillAttend { get; set; }
 
 
@@ -40,6 +39,7 @@ namespace EnterpriseAssignmentOne.Models
 
         public String TwitterAccount { get; set; }
 
+        [Required(ErrorMessage = "Please specify what you are interested in")]
         public TechnicalInterest Interest { get; set; }
 
 

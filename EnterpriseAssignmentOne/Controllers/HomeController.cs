@@ -27,7 +27,7 @@ namespace EnterpriseAssignmentOne.Controllers
         [HttpPost]
         public ViewResult RsvpForm(CompetitionInvite guestResponse)
         {
-
+            
             if (ModelState.IsValid)
             {
                 if (guestResponse.WillAttend == true)

@@ -1,4 +1,6 @@
-﻿@model EnterpriseAssignmentOne.Models.CompetitionInvite
+﻿@using EnterpriseAssignmentOne.Models;
+
+@model CompetitionInvite
 
 @{
     Layout = null;
@@ -45,30 +47,42 @@
 
 
 
+
                 <div class="form-group">
-                    <label>Will you attend?</label>
-                    @Html.DropDownListFor(x => x.WillAttend, new[]
+                    <label>Technical Interest:</label>
+                    @Html.DropDownListFor(x => x.Interest, new[]
                     {
                         new SelectListItem()
                         {
-                            Text = "Yes, I'll be there",
-                            Value = bool.TrueString
+                            Text = "Internet of Things",
+                            Value = TechnicalInterest.IoT.ToString()
                         },
                         new SelectListItem()
                         {
-                            Text = "No, I can't come",
-                            Value = bool.FalseString
+                            Text = "Cognitive Computing",
+                            Value = TechnicalInterest.Cognitive.ToString()
+                        },
+                        new SelectListItem()
+                        {
+                            Text = "Wearable Computing",
+                            Value = TechnicalInterest.Wearable.ToString()
+                        },
+                        new SelectListItem()
+                        {
+                            Text = "Augmented / Virtual Reality",
+                            Value = TechnicalInterest.AR_VR.ToString()
                         }
                     },
                     "Choose an option",
                     new { @class = "form-control" })
-
                 </div>
 
 
 
                 <div class="text-center">
-                    <input class="btn btn-success" type="submit" value="Submit RSVP" />
+                    <input class="btn btn-success" type="submit" value="Accept Invitation" />
+
+                    <input class="btn btn-warning" type="submit" value="Send Regrets" />
                 </div>
             }
         </div>
