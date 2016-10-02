@@ -30,10 +30,17 @@ namespace EnterpriseAssignmentOne.Controllers
             
             if (ModelState.IsValid)
             {
-                if (guestResponse.WillAttend == true)
+
+
+                if (Request.Form["btnsubmit"].Equals("Accept Invitation"))
                 {
+
+                    guestResponse.WillAttend = true;
+
                     SaveInvite(guestResponse);
                 }
+
+                
 
                 return View("Thanks", guestResponse);
             }
@@ -41,9 +48,7 @@ namespace EnterpriseAssignmentOne.Controllers
             {
                 return View();
             }
-            
-
-            
+                
         }
 
 
