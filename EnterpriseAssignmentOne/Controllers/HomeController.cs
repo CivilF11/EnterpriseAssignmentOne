@@ -10,9 +10,9 @@ namespace EnterpriseAssignmentOne.Controllers
     public class HomeController : Controller
     {
         // GET: Home
-        public ActionResult Index()
+        public ViewResult Index()
         {
-            return View();
+            return View("Sheridan" as object);
         }
 
 
@@ -25,19 +25,8 @@ namespace EnterpriseAssignmentOne.Controllers
 
 
         [HttpPost]
-        public ViewResult RsvpForm(CompetitionInvite guestResponse)
+        public ViewResult RsvpForm(InviteResponse guestResponse)
         {
-            //if (ModelState.IsValid)
-            //{
-            //    // TODO: Email response to the party organizer
-            //    return View("Thanks", guestResponse);
-            //}
-            //else
-            //{
-            //    // there is a validation error
-            //    return View();
-            //}
-
 
             if (ModelState.IsValid)
             {
@@ -65,16 +54,15 @@ namespace EnterpriseAssignmentOne.Controllers
 
 
 
-        private void SaveInvite(CompetitionInvite response)
+        private void SaveInvite(InviteResponse response)
         {
-            List<CompetitionInvite> acceptList = HttpContext.Cache["ACCEPT_LIST"] as List<CompetitionInvite>;
+            List<InviteResponse> acceptList = HttpContext.Cache["ACCEPT_LIST"] as List<InviteResponse>;
 
             if (acceptList == null)
             {
-                acceptList = new List<CompetitionInvite>();
+                acceptList = new List<InviteResponse>();
                 HttpContext.Cache["ACCEPT_LIST"] = acceptList;
             }
-
 
             acceptList.Add(response);
         }

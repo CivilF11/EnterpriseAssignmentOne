@@ -1,5 +1,5 @@
 ﻿@using EnterpriseAssignmentOne.Models
-@model List<CompetitionInvite>
+@model List<InviteResponse>
 
 @{
     Layout = null;
@@ -14,7 +14,7 @@
 </head>
 <body>
     <div> 
-        @foreach (CompetitionInvite response in @Model)
+        @foreach (InviteResponse response in @Model)
         {
             <h1>
                 <p>response.Name</p>

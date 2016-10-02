@@ -6,7 +6,7 @@ using System.Web;
 
 namespace EnterpriseAssignmentOne.Models
 {
-    public class CompetitionInvite
+    public class InviteResponse
     {
         [Required(ErrorMessage = "Please enter your name")]
         public string Name { get; set; }
