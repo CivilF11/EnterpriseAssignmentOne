@@ -6,7 +6,18 @@ using System.Web;
 
 namespace EnterpriseAssignmentOne.Models
 {
-    public class InviteResponse
+
+    public enum TechnicalInterest
+    {
+        IoT,
+        Cognitive,
+        Wearable,
+        AR_VR
+    }
+
+
+
+    public class CompetitionInvite
     {
         [Required(ErrorMessage = "Please enter your name")]
         public string Name { get; set; }
@@ -21,5 +32,17 @@ namespace EnterpriseAssignmentOne.Models
 
         [Required(ErrorMessage = "Please specify whether you'll attend")]
         public bool? WillAttend { get; set; }
+
+
+
+
+        public String Address { get; set; }
+
+        public String TwitterAccount { get; set; }
+
+        public TechnicalInterest Interest { get; set; }
+
+
+
     }
 }

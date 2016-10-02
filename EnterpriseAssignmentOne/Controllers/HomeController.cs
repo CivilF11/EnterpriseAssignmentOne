@@ -25,7 +25,7 @@ namespace EnterpriseAssignmentOne.Controllers
 
 
         [HttpPost]
-        public ViewResult RsvpForm(InviteResponse guestResponse)
+        public ViewResult RsvpForm(CompetitionInvite guestResponse)
         {
 
             if (ModelState.IsValid)
@@ -54,13 +54,13 @@ namespace EnterpriseAssignmentOne.Controllers
 
 
 
-        private void SaveInvite(InviteResponse response)
+        private void SaveInvite(CompetitionInvite response)
         {
-            List<InviteResponse> acceptList = HttpContext.Cache["ACCEPT_LIST"] as List<InviteResponse>;
+            List<CompetitionInvite> acceptList = HttpContext.Cache["ACCEPT_LIST"] as List<CompetitionInvite>;
 
             if (acceptList == null)
             {
-                acceptList = new List<InviteResponse>();
+                acceptList = new List<CompetitionInvite>();
                 HttpContext.Cache["ACCEPT_LIST"] = acceptList;
             }
 
